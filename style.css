@@ -4,7 +4,28 @@ html{scroll-behavior:smooth}
 body{font-family:Inter,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
 a{text-decoration:none;color:inherit}.container{width:min(1120px,92%);margin:auto}
 .header{position:sticky;top:0;z-index:20;background:rgba(7,9,20,.82);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.07)}
-.nav{height:72px;display:flex;align-items:center;justify-content:space-between}.logo{font-size:20px;font-weight:800;letter-spacing:-.5px}.logo span{color:#9b7cff}.logo b{color:#18c8ff}
+.nav{height:72px;display:flex;align-items:center;justify-content:space-between}.logo{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  font-size:20px;
+  font-weight:800;
+  letter-spacing:-.5px;
+}
+
+.logo img{
+  width:36px;
+  height:36px;
+  object-fit:contain;
+}
+
+.logo span{
+  color:white;
+}
+
+.logo b{
+  color:#18c8ff;
+}
 nav{display:flex;gap:28px;color:var(--muted);font-weight:600}nav a:hover{color:white}.menu-btn{display:none;background:none;border:0;color:white;font-size:25px}
 .hero{min-height:650px;display:flex;align-items:center;position:relative;overflow:hidden}
 .hero-content{text-align:center;position:relative;z-index:2;padding:90px 0}
