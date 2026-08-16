@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Tool Nova AI - free, fast and useful online tools.">
+  <title>Tool Nova AI | Free Online Tools</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header">
+    <div class="container nav">
+      <a class="logo" href="#home"><span>✦</span> Tool Nova <b>AI</b></a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+      <nav id="navLinks">
+        <a href="#home">Home</a>
+        <a href="#tools">Tools</a>
+        <a href="#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="hero-glow glow-one"></div>
+      <div class="hero-glow glow-two"></div>
+      <div class="container hero-content">
+        <div class="badge">🚀 FREE • FAST • SIMPLE</div>
+        <h1>Smart tools for your <span>everyday life.</span></h1>
+        <p>Tool Nova AI brings useful online tools into one clean, colorful and mobile-friendly place.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#tools">Explore Tools →</a>
+          <a class="btn secondary" href="#about">Learn More</a>
+        </div>
+        <div class="stats">
+          <div><strong>100%</strong><small>Free tools</small></div>
+          <div><strong>⚡</strong><small>Fast & simple</small></div>
+          <div><strong>📱</strong><small>Mobile friendly</small></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="tools-section" id="tools">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">TOOLBOX</span>
+            <h2>Popular tools</h2>
+          </div>
+          <input id="searchBox" type="search" placeholder="Search tools..." aria-label="Search tools">
+        </div>
+
+        <div class="tool-grid" id="toolGrid">
+          <article class="tool-card" data-name="age calculator">
+            <div class="icon purple">🎂</div>
+            <h3>Age Calculator</h3>
+            <p>Calculate your exact age from your date of birth.</p>
+            <button class="tool-btn" data-open="ageTool">Open Tool</button>
+          </article>
+
+          <article class="tool-card" data-name="calculator">
+            <div class="icon blue">🧮</div>
+            <h3>Calculator</h3>
+            <p>Quickly solve everyday mathematical calculations.</p>
+            <button class="tool-btn" data-open="calcTool">Open Tool</button>
+          </article>
+
+          <article class="tool-card" data-name="password generator">
+            <div class="icon pink">🔐</div>
+            <h3>Password Generator</h3>
+            <p>Create a strong random password for your accounts.</p>
+            <button class="tool-btn" data-open="passwordTool">Open Tool</button>
+          </article>
+
+          <article class="tool-card" data-name="text counter">
+            <div class="icon orange">📝</div>
+            <h3>Text Counter</h3>
+            <p>Count words, characters and spaces in your text.</p>
+            <button class="tool-btn" data-open="textTool">Open Tool</button>
+          </article>
+        </div>
+        <p id="noResults" class="no-results" hidden>No tools found.</p>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="container about-card">
+        <div>
+          <span class="eyebrow">ABOUT TOOL NOVA AI</span>
+          <h2>One place. Useful tools. Zero confusion.</h2>
+          <p>We're building a simple collection of free browser-based tools that work smoothly on phones and computers.</p>
+        </div>
+        <div class="about-points">
+          <span>✓ No complicated setup</span>
+          <span>✓ Mobile-first design</span>
+          <span>✓ Easy to use</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="modal" id="toolModal" aria-hidden="true">
+    <div class="modal-box">
+      <button class="close" id="closeModal">×</button>
+
+      <div class="tool-panel" id="ageTool">
+        <span class="eyebrow">TOOL</span><h2>🎂 Age Calculator</h2>
+        <p>Enter your date of birth.</p>
+        <input id="dob" type="date">
+        <button class="btn primary full" id="ageBtn">Calculate Age</button>
+        <div class="result" id="ageResult"></div>
+      </div>
+
+      <div class="tool-panel" id="calcTool">
+        <span class="eyebrow">TOOL</span><h2>🧮 Calculator</h2>
+        <input id="calcDisplay" class="display" type="text" inputmode="decimal" placeholder="e.g. 25*4+10">
+        <button class="btn primary full" id="calcBtn">Calculate</button>
+        <div class="result" id="calcResult"></div>
+      </div>
+
+      <div class="tool-panel" id="passwordTool">
+        <span class="eyebrow">TOOL</span><h2>🔐 Password Generator</h2>
+        <label>Length: <b id="lengthValue">14</b></label>
+        <input id="passLength" type="range" min="8" max="32" value="14">
+        <button class="btn primary full" id="passBtn">Generate Password</button>
+        <div class="result password-result" id="passResult"></div>
+        <button class="copy-btn" id="copyPass">Copy</button>
+      </div>
+
+      <div class="tool-panel" id="textTool">
+        <span class="eyebrow">TOOL</span><h2>📝 Text Counter</h2>
+        <textarea id="textInput" rows="7" placeholder="Type or paste your text here..."></textarea>
+        <div class="counter-grid">
+          <div><strong id="wordCount">0</strong><small>Words</small></div>
+          <div><strong id="charCount">0</strong><small>Characters</small></div>
+          <div><strong id="spaceCount">0</strong><small>Spaces</small></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container footer-inner">
+      <div class="logo"><span>✦</span> Tool Nova <b>AI</b></div>
+      <p>© <span id="year"></span> Tool Nova AI. Made with ✨</p>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
